@@ -8,12 +8,16 @@
 const std::string PATH = "../data/train.csv";
 
 int main() {
+//    std::cout << CSVFIELDS::a << " " << CSVFIELDS::b << " " << CSVFIELDS::c;
     stringVector table;
     Titanic::readCSV(PATH, table);
-    for(const std::vector < std::string > &vec : table) {
-        for(const std::string &elem : vec) {
-            std::cout << elem << " ";
-        }
-        std::cout << '\n';
-    }
+    Titanic t(table);
+    t.sortPassengers();
+    std::cout << t;
+//    for(const std::vector < std::string > &vec : table) {
+//        for(const std::string &elem : vec) {
+//            std::cout << elem << " ";
+//        }
+//        std::cout << '\n';
+//    }
 }
